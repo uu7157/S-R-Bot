@@ -118,7 +118,6 @@ def save(client: pyrogram.client.Client, message: pyrogram.types.messages_and_me
 # handle private
 def handle_private(message,chatid,msgid):
 		msg  = acc.get_messages(chatid,msgid)
-		print(msg)
 
 		# if "text" in str(msg):
 		# 	bot.send_message(message.chat.id, msg.text, entities=msg.entities, reply_to_message_id=message.id)
