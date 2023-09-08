@@ -127,6 +127,7 @@ def handle_private(message,chatid,msgid):
 		dosta = threading.Thread(target=lambda:downstatus(f'{message.id}downstatus.txt',smsg),daemon=True)
 		dosta.start()
 		file = acc.download_media(msg, progress=progress, progress_args=[message,"down"])
+		print(file)
 		os.remove(f'{message.id}downstatus.txt')
 
 		upsta = threading.Thread(target=lambda:upstatus(f'{message.id}upstatus.txt',smsg),daemon=True)
@@ -142,8 +143,8 @@ def handle_private(message,chatid,msgid):
 
 		elif "Video" in str(msg):
 			try: 
-				thumb = acc.download_media(msg.video.thumbs[0].file_id)
 				print(thumb , " ", msg.video.thumbs[0].file_id)
+				thumb = acc.download_media(msg.video.thumbs[0].file_id)
 			except: thumb = None
 
 			bot.send_video(message.chat.id, file, duration=msg.video.duration, width=msg.video.width, height=msg.video.height, thumb=thumb, caption=msg.caption, caption_entities=msg.caption_entities, reply_to_message_id=message.id, progress=progress, progress_args=[message,"up"])
