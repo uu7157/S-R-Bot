@@ -120,13 +120,11 @@ def handle_private(message,chatid,msgid):
 		msg  = acc.get_messages(chatid,msgid)
 		print(msg)
 
-		if "text" in str(msg):
-			bot.send_message(message.chat.id, msg.text, entities=msg.entities, reply_to_message_id=message.id)
-			return
+		# if "text" in str(msg):
+		# 	bot.send_message(message.chat.id, msg.text, entities=msg.entities, reply_to_message_id=message.id)
+		# 	return
 
-		print('before')
 		smsg = bot.send_message(message.chat.id, '__Downloading__', reply_to_message_id=message.id)
-		print('after')
 		dosta = threading.Thread(target=lambda:downstatus(f'{message.id}downstatus.txt',smsg),daemon=True)
 		dosta.start()
 		file = acc.download_media(msg, progress=progress, progress_args=[message,"down"])
@@ -146,7 +144,6 @@ def handle_private(message,chatid,msgid):
 
 		elif "Video" in str(msg):
 			try: 
-				print(thumb , " ", msg.video.thumbs[0].file_id)
 				thumb = acc.download_media(msg.video.thumbs[0].file_id)
 			except: thumb = None
 
