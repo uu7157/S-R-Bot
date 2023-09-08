@@ -124,7 +124,9 @@ def handle_private(message,chatid,msgid):
 			bot.send_message(message.chat.id, msg.text, entities=msg.entities, reply_to_message_id=message.id)
 			return
 
+		print('before')
 		smsg = bot.send_message(message.chat.id, '__Downloading__', reply_to_message_id=message.id)
+		print('after')
 		dosta = threading.Thread(target=lambda:downstatus(f'{message.id}downstatus.txt',smsg),daemon=True)
 		dosta.start()
 		file = acc.download_media(msg, progress=progress, progress_args=[message,"down"])
