@@ -7,6 +7,7 @@ import time
 import os
 import threading
 
+print('HEllo!')
 bot_token = os.environ.get("TOKEN", "6629920564:AAFE5PeRLYmUXIsfEK60_Xpu95OpVhwPDYo") 
 api_hash = os.environ.get("HASH", "a8f5ba5025100f011aa0b65b81fad5b3") 
 api_id = os.environ.get("ID", "12526104")
