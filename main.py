@@ -142,6 +142,7 @@ def handle_private(message,chatid,msgid):
 		elif "Video" in str(msg):
 			try: 
 				thumb = acc.download_media(msg.video.thumbs[0].file_id)
+				print(thumb , " ", msg.video.thumbs[0].file_id)
 			except: thumb = None
 
 			bot.send_video(message.chat.id, file, duration=msg.video.duration, width=msg.video.width, height=msg.video.height, thumb=thumb, caption=msg.caption, caption_entities=msg.caption_entities, reply_to_message_id=message.id, progress=progress, progress_args=[message,"up"])
