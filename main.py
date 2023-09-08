@@ -8,8 +8,8 @@ import os
 import threading
 
 bot_token = os.environ.get("TOKEN", "6629920564:AAFE5PeRLYmUXIsfEK60_Xpu95OpVhwPDYo") 
-api_hash = os.environ.get("HASH", "6f36129da1a6050ee10ece4fa99db6f0") 
-api_id = os.environ.get("ID", "11727095")
+api_hash = os.environ.get("HASH", "a8f5ba5025100f011aa0b65b81fad5b3") 
+api_id = os.environ.get("ID", "12526104")
 bot = Client("mybot", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
 
 ss = os.environ.get("STRING", "AQBgsBCpMX1VU1pqr4foB2ChdRU2eYIvm7kG8STHS9axAxILdNxYPNhsA12dJjykP-LMS-eQAVVdzYboA2hPIE2joqyAncyQhlcOjjRIkh5PhyPpDvSkNrQ_zHeGSXN_xEZJkzLmPVNwcLxeepPYLBjl5scbmzSSZNQhpn090txaviZmVRZY1j5AZrJao39HPSUZVddzVzdt3otobJW8QAu53pUm243RkvmO7MHEMQVUkLEOzyS4Jksvob4C-rY-rHu15NgwKIPzGW_gfTeCYrCHFGKCKrVBc__YxJ2Ph3hHz1YTO7l0MOlAOht58qjaj06QsFYrzWfy5d55DffGpeiDOKaB4QA")
